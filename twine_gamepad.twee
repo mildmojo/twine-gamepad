@@ -1,0 +1,37 @@
+﻿:: Start
+Edit the Style passage to set the "selected link" style.
+
+Edit the Script passage to set the paths to the JS gamepad libs.
+
+by [[@mildmojo|http://twitter.com/mildmojo]]
+
+:: Style - selected link [stylesheet]
+a.gamepadSelected {
+  border: 2px dotted blue;
+}
+
+
+:: Script loader [script]
+// requires jQuery
+
+// Change these to point to your path(s).
+loadScript('gamepad.min.js');
+loadScript('twine_gamepad.js');
+
+function loadScript(url, callback) {
+  callback = callback || function(){};
+
+  jQuery.ajax({
+    url: url,
+    dataType: 'script',
+    cache: true})
+    .done(function(script, textStatus) {
+      callback();
+    })
+    .fail(function(jqxhr, settings, exception) {
+      console.error(exception);
+      callback(exception);
+    });
+}
+
+
