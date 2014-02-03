@@ -6,22 +6,19 @@ the HTML5 Gamepad API, which is supported in some versions of Firefox and
 Chrome. Use the analog stick and D-pad to select links and press any face button
 to visit them.
 
-See the `example.tws` story file for a real-world usage example.
+You may need to enable the Gamepad API in your browser for this extension to
+work. In Firefox, visit `about:config` and set `dom.gamepad.enabled` to `true`.
+In Chrome, visit `chrome://flags` and enable the Gamepad API. Test your gamepad
+with a [web](http://luser.github.io/gamepadtest/) [demo](http://html5gamepad.com/).
 
 ## Usage
 
-1. Edit `twine_gamepad.twee`.
-2. Make sure paths to `gamepad.min.js` and `twine_gamepad.js` look correct
-   relative to your story's final export path.
-3. Modify the "selected link" CSS style if desired.
-4. Add `twine_gamepad.twee` to your story's StoryIncludes passage.
-5. Build your story.
-6. Package your story or deploy it to a website along with the `gamepad.min.js`
-   and `twine_gamepad.js` files.
+1. Add `twine_gamepad.twee` to your story's StoryIncludes passage.
+2. Build your story.
 
 You may also specify the "selected link" CSS style in your main story file's
-stylesheet. If you do, you may need to use `!important` to override the
-library's defaults.
+stylesheet. If you do, you may need to use `!important` to override this
+extension's defaults.
 
 ```css
 a.gamepadSelected {
@@ -29,16 +26,23 @@ a.gamepadSelected {
 }
 ```
 
-## Alternate single-file usage
+See the `example.tws` story file for a real-world usage example.
+
+## Alternate usage without StoryIncludes
 
 Alternately, you may copy the contents of `gamepad.min.js` and
 `twine_gamepad.js` directly into a single `script` passage in your story. Make
 sure `gamepad.min.js` comes before `twine_gamepad.js`. Make sure to add a CSS
 rule to your stylesheet for `a.gamepadSelected` to make it appear selected.
 
-Maybe the separate-file method is bonkers and this is the way it should be by
-default in `twine_gamepad.twee`.
+## Development
+
+The `build.sh` script automates combining src/* into a single .twee file to be
+included in Twine stories. It will minify javascript if you have
+[uglify-js](https://github.com/mishoo/UglifyJS) installed. After you modify
+`src/twine_gamepad.js`, for example, run `build.sh` to update
+`twine_gamepad.twee`.
 
 ## Thanks
 
-Thanks to @kallaspriit for the excellent [HTML5-JavaScript-Gamepad-Controller-Library](https://github.com/kallaspriit/HTML5-JavaScript-Gamepad-Controller-Library).
+Thanks to @kallaspriit for the excellent [HTML5-JavaScript-Gamepad-Controller-Library](https://github.com/kallaspriit/HTML5-JavaScript-Gamepad-Controller-Library) included here.

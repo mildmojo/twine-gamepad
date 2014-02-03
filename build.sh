@@ -1,7 +1,6 @@
 #!/bin/bash
 
 MINIFIED_FILE='src/twine_gamepad_full.min.js'
-LICENSE_FILE='LICENSE'
 CSS_FILE='src/style.css'
 
 if command -v uglifyjs >/dev/null 2>&1
@@ -16,6 +15,5 @@ echo ':: Style - selected link [stylesheet]' > twine_gamepad.twee
 cat "$CSS_FILE" >> twine_gamepad.twee
 echo >> twine_gamepad.twee
 echo ':: Script loader [script]' >> twine_gamepad.twee
-cat "$LICENSE_FILE" >> twine_gamepad.twee
 echo '// requires jQuery' >> twine_gamepad.twee
 cat "$MINIFIED_FILE" >> twine_gamepad.twee
