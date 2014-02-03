@@ -1,0 +1,4 @@
+/* Set the style for the currently-selected link. */
+a.gamepadSelected {
+  border: 2px dotted blue;
+}

@@ -65,7 +65,6 @@
   function nextLink() {
     var links = jQuery('div.passage.body a');
     var newIndex = 0;
-    var $first = jQuery(links[0]);
     var $last = jQuery(links[links.length - 1]);
     if (links.is('.gamepadSelected') && ! $last.is('.gamepadSelected')) {
       links.each(function(_idx, el) {
@@ -85,7 +84,6 @@
     var links = jQuery('div.passage.body a');
     var newIndex = 0;
     var $first = jQuery(links[0]);
-    var $last = jQuery(links[links.length - 1]);
     if (links.is('.gamepadSelected')) {
       if ($first.is('.gamepadSelected')) {
         $first.removeClass('gamepadSelected');
