@@ -54,7 +54,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       case 'FACE_2':
       case 'FACE_3':
       case 'FACE_4':
-        jQuery('a.internalLink.gamepadSelected').click();
+        jQuery('a.gamepadSelected').removeClass('gamepadSelected').click();
         break;
     }
   });
@@ -86,7 +86,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   gamepad.init();
 
   function nextLink() {
-    var links = jQuery('div.passage.body a');
+    var links = jQuery('a.internalLink, a.externalLink');
     var newIndex = 0;
     var $last = jQuery(links[links.length - 1]);
     if (links.is('.gamepadSelected') && ! $last.is('.gamepadSelected')) {
@@ -104,7 +104,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   }
 
   function prevLink() {
-    var links = jQuery('div.passage.body a');
+    var links = jQuery('a.internalLink, a.externalLink');
     var newIndex = 0;
     var $first = jQuery(links[0]);
     if (links.is('.gamepadSelected')) {
