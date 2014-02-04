@@ -22,7 +22,15 @@ extension's defaults.
 
 ```css
 a.gamepadSelected {
-  border: 2px dotted white !important;
+  border: none !important;
+  text-decoration: underline;
+}
+
+/* Default stylesheet adds 2px padding to keep nearby text from jittering when
+ * a 2px border is added to selected links. Remove it.
+ */
+a.internalLink, a.externalLink {
+  padding: 0 !important;
 }
 ```
 
