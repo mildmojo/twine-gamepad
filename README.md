@@ -3,8 +3,9 @@ twine-gamepad
 
 This is a Twine extension that lets you play your game with a gamepad. It uses
 the HTML5 Gamepad API, which is supported in some versions of Firefox and
-Chrome. Use the analog stick and D-pad to select links and press any face button
-to visit them.
+Chrome. Use the analog stick and D-pad to select links; down and right will
+select the next link in reading order, up and left will select the previous link.
+Press a face button to visit the highlighted link.
 
 You may need to enable the Gamepad API in your browser for this extension to
 work. In Firefox, visit `about:config` and set `dom.gamepad.enabled` to `true`.
@@ -42,6 +43,31 @@ Alternately, you may copy the contents of `gamepad.min.js` and
 `twine_gamepad.js` directly into a single `script` passage in your story. Make
 sure `gamepad.min.js` comes before `twine_gamepad.js`. Make sure to add a CSS
 rule to your stylesheet for `a.gamepadSelected` to make it appear selected.
+
+## Troubleshooting
+
+The HTML5 Gamepad API is a new and exciting feature, so it's not yet
+well-supported. If your gamepad doesn't work, try the following:
+
+- Try a [gamepad test page](http://luser.github.io/gamepadtest/)! If it works
+  there, it'll work with twine-gamepad.
+- Make sure your browser supports the HTML5 Gamepad API. As of 2014/02/03, this
+  means recent versions of Firefox 24+ (see below), nightly Canary builds of
+  Chrome, or modern consoles (Xbox One, PlayStation 4, Wii U). The
+  [node-webkit](https://github.com/rogerwang/node-webkit) framework for making
+  desktop apps out of HTML5/JS apps (like Twine) ships with gamepad support out
+  of the box. I'm having trouble locating a definitive list of supported browsers.
+- Make sure the Gamepad API is enabled in your browser. In Firefox, you need
+  to enable the `dom.gamepad.enabled` preference by visiting `about:config`. In
+  nightly builds of Chrome, you may need to visit `chrome://flags` to enable the
+  gamepad.
+- Press a face button on the gamepad. For security against
+  [browser fingerprinting](https://panopticlick.eff.org/), browsers don't let
+  javascript access gamepads until the user "opts in" by pressing a button.
+- Make sure the browser supports your gamepad. Some versions of Chrome and
+  node-webkit for Windows only support XInput-compatible gamepads (like Xbox 360
+  gamepads), for example.
+- Try that [gamepad test page](http://luser.github.io/gamepadtest/) again!
 
 ## Development
 
