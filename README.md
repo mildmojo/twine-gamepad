@@ -12,6 +12,10 @@ work. In Firefox, visit `about:config` and set `dom.gamepad.enabled` to `true`.
 In Chrome, visit `chrome://flags` and enable the Gamepad API. Test your gamepad
 with a [web](http://luser.github.io/gamepadtest/) [demo](http://html5gamepad.com/).
 
+Originally developed for use in the Global Game Jam 2014 entry, "Get a Clue"
+([play](http://get-a-clue.herokuapp.com),
+[source](https://github.com/benjamingold/GGJ14GetAClue/)).
+
 ## Usage
 
 1. Add `twine_gamepad.twee` to your story's StoryIncludes passage.
