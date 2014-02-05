@@ -18,7 +18,7 @@ Originally developed for use in the Global Game Jam 2014 entry, "Get a Clue"
 
 ## Demo
 
-Try the gamepad-enabled [example story](https://mildmojo.github.io/twine-gamepad/example)
+Try the gamepad-enabled [example story](http://mildmojo.github.io/twine-gamepad/example)
 (built from `example.tws` included here).
 
 ## Usage
