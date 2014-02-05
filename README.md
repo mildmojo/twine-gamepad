@@ -16,6 +16,11 @@ Originally developed for use in the Global Game Jam 2014 entry, "Get a Clue"
 ([play](http://get-a-clue.herokuapp.com),
 [source](https://github.com/benjamingold/GGJ14GetAClue/)).
 
+## Demo
+
+Try the gamepad-enabled [example story](https://mildmojo.github.io/twine-gamepad/example)
+(built from `example.tws` included here).
+
 ## Usage
 
 1. Add `twine_gamepad.twee` to your story's StoryIncludes passage.
