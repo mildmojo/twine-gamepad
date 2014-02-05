@@ -1,7 +1,7 @@
 twine-gamepad
 =============
 
-This is a Twine extension that lets you play your game with a gamepad. It uses
+Twine-gamepad is a Twine extension that lets you play your game with a gamepad. It uses
 the HTML5 Gamepad API, which is supported in some versions of Firefox and
 Chrome. Use the analog stick and D-pad to select links; down and right will
 select the next link in reading order, up and left will select the previous link.
@@ -23,14 +23,22 @@ Try the gamepad-enabled [example story](http://mildmojo.github.io/twine-gamepad/
 
 ## Usage
 
+0. Get a copy of `twine_gamepad.twee` (
+   [single file](https://raw.github.com/mildmojo/twine-gamepad/master/twine_gamepad.twee),
+   [zip of all files](https://github.com/mildmojo/twine-gamepad/archive/master.zip),
+   or clone this repo with git).
 1. Add `twine_gamepad.twee` to your story's StoryIncludes passage.
 2. Build your story.
 
-You may also specify the "selected link" CSS style in your main story file's
-stylesheet. If you do, you may need to use `!important` to override this
-extension's defaults.
+## Styling
+
+You might want to change the [default style](/src/style.css) that shows up when
+you select a link with your gamepad. You can override the default CSS style in
+a `stylesheet`-tagged passage in your main story file. If you do, you may need
+to use `!important` to override this extension's defaults. Here's an example:
 
 ```css
+/* Change the "selected link" style to underlining. */
 a.gamepadSelected {
   border: none !important;
   text-decoration: underline;
@@ -48,10 +56,9 @@ See the `example.tws` story file for a real-world usage example.
 
 ## Alternate usage without StoryIncludes
 
-Alternately, you may copy the contents of `gamepad.min.js` and
-`twine_gamepad.js` directly into a single `script` passage in your story. Make
-sure `gamepad.min.js` comes before `twine_gamepad.js`. Make sure to add a CSS
-rule to your stylesheet for `a.gamepadSelected` to make it appear selected.
+Alternately, you may copy the contents of `gamepad.min.js` and `twine_gamepad.js`
+directly into a single `script`-tagged passage in your story, and `style.css`
+directly into a `stylesheet`-tagged passage.
 
 ## Troubleshooting
 
