@@ -1,11 +1,12 @@
 twine-gamepad
 =============
 
-Twine-gamepad is a Twine extension that lets you play your game with a gamepad. It uses
-the HTML5 Gamepad API, which is supported in some versions of Firefox and
-Chrome. Use the analog stick and D-pad to select links; down and right will
-select the next link in reading order, up and left will select the previous link.
-Press a face button to visit the highlighted link.
+Twine-gamepad is a Twine extension that lets you play your game with a gamepad.
+It uses the [HTML5 Gamepad API](https://developer.mozilla.org/en-US/docs/Web/Guide/API/Gamepad),
+which is supported in modern versions of Firefox and Chrome. Use the analog stick
+and D-pad to select links; down and right will select the next link in reading
+order, up and left will select the previous link. Press a face button to visit
+the highlighted link.
 
 You may need to enable the Gamepad API in your browser for this extension to
 work. In Firefox, visit `about:config` and set `dom.gamepad.enabled` to `true`.
