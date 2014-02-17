@@ -20,7 +20,7 @@ p9
 (dp11
 S'selected'
 p12
-I00
+I01
 sS'pos'
 p13
 (lp14
@@ -34,7 +34,7 @@ p16
 (dp18
 S'text'
 p19
-VGamepad Example\u000a\u000aYou may need to restart your browser after you connect a gamepad.\u000a\u000aYou may need to [[enable the Gamepad API]] in your browser.\u000a\u000aYou may need to press a face button on the controller before the browser will start reading gamepad events.\u000a\u000aUse the left stick or D-pad to navigate between links. Press any face button to visit a link.\u000a\u000a[[Here's a link.|That was easy]]\u000a[[Here's another.|That was easy]]\u000a[[Here's one more, for good measure.|That was easy]]
+VTwine-Gamepad Example\u000a\u000aYou may need to restart your browser after you connect a gamepad.\u000a\u000aYou may need to [[enable the Gamepad API]] in your browser.\u000a\u000aYou may need to press a face button on the controller before the browser will start reading gamepad events.\u000a\u000aUse the left stick or D-pad to navigate between links. Press any face button to visit a link.\u000a\u000a[[Here's a link.|That was easy]]\u000a[[Here's another.|That was easy]]\u000a[[Here's one more, for good measure.|That was easy]]
 p20
 sS'title'
 p21
@@ -46,13 +46,13 @@ ctime
 struct_time
 p24
 ((I2014
-I1
-I31
-I1
-I5
+I2
+I16
+I20
 I18
-I4
-I31
+I7
+I6
+I47
 I0
 tp25
 (dp26
@@ -90,7 +90,7 @@ Tiddler
 p38
 (dp39
 g19
-VIn Firefox:\u000a1. Open 'about:config'.\u000a2. Search for 'gamepad'.\u000a3. Double-click 'dom.gamepad.enable' to change it from 'false' to 'true'.\u000a\u000aIn Chrome:\u000a1. Open '[[chrome://flags]]'.\u000a2. Enable the gamepad API (may only appear in 'dev' or 'canary' prerelease versions of the browser).\u000a\u000aIn IE and other browsers, the Gamepad API may not be supported at all.
+VIn Firefox:\u000a1. Open 'about:config'.\u000a2. Search for 'gamepad'.\u000a3. Double-click 'dom.gamepad.enable' to change it from 'false' to 'true'.\u000a\u000aIn Chrome:\u000a1. Open '[[chrome://flags]]'.\u000a2. Enable the gamepad API (may only appear in 'dev' or 'canary' prerelease versions of the browser).\u000a\u000aIn IE and other browsers, the Gamepad API may not be supported at all.\u000a\u000a[[Back|Start]]
 p40
 sg21
 Venable the Gamepad API
@@ -98,13 +98,13 @@ p41
 sg23
 g24
 ((I2014
-I1
-I31
-I1
-I8
+I2
+I16
+I20
+I16
+I42
 I6
-I4
-I31
+I47
 I0
 tp42
 (dp43
@@ -227,10 +227,60 @@ tp77
 (dp78
 tp79
 Rp80
+sbsa(dp81
+g12
+I00
+sg13
+(lp82
+F11.0
+aF287.0
+asg15
+(itiddlywiki
+Tiddler
+p83
+(dp84
+g19
+VTwine-Gamepad Example
+p85
+sg21
+VStoryTitle
+p86
+sg23
+g24
+((I2014
+I2
+I16
+I20
+I17
+I38
+I6
+I47
+I0
+tp87
+(dp88
+tp89
+Rp90
+sg29
+(lp91
+sg31
+g24
+((I2014
+I2
+I16
+I20
+I17
+I31
+I6
+I47
+I0
+tp92
+(dp93
+tp94
+Rp95
 sbsasS'scale'
-p81
+p96
 I1
 sS'snapping'
-p82
+p97
 I00
 ss.

@@ -22,21 +22,24 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 (function(exports) {
-  var Gamepad;
-  if ((typeof(module) !== 'undefined') && module.exports) {
-    Gamepad = require('gamepad');
-  } else {
-    Gamepad = window.Gamepad;
-  }
+  var Gamepad = window.Gamepad;
+
+  // Removed until it's tested with node-webkit.
+  // if ((typeof(module) !== 'undefined') && module.exports) {
+  //   Gamepad = require('gamepad');
+  // } else {
+  //   Gamepad = window.Gamepad;
+  // }
+
   var gamepad = new Gamepad();
   var axes = { LEFT_STICK_X: 0, LEFT_STICK_Y: 0 };
   var DEADZONE = 0.5;
 
-  gamepad.bind(Gamepad.Event.CONNECTED, function(device) {
+  gamepad.bind(Gamepad.Event.CONNECTED, function(_device) {
     console.log('Gamepad connected.');
   });
 
-  gamepad.bind(Gamepad.Event.DISCONNECTED, function(device) {
+  gamepad.bind(Gamepad.Event.DISCONNECTED, function(_device) {
     console.log('Gamepad disconnected.');
   });
 
@@ -54,7 +57,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       case 'FACE_2':
       case 'FACE_3':
       case 'FACE_4':
-        jQuery('a.gamepadSelected').removeClass('gamepadSelected').click();
+        var selected = document.querySelector('.gamepadSelected');
+        if (selected) {
+          removeClass(selected, 'gamepadSelected');
+          selected.dispatchEvent(new MouseEvent('click'));
+        }
         break;
     }
   });
@@ -86,42 +93,62 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   gamepad.init();
 
   function nextLink() {
-    var links = jQuery('a.internalLink, a.externalLink');
+    var links = getTwineLinks();
+    var selectedIndex = findSelectedIndex(links);
     var newIndex = 0;
-    var $last = jQuery(links[links.length - 1]);
-    if (links.is('.gamepadSelected') && ! $last.is('.gamepadSelected')) {
-      links.each(function(_idx, el) {
-        var $el = jQuery(el);
-        if ($el.is('.gamepadSelected')) {
-          $el.removeClass('gamepadSelected');
-          newIndex = _idx + 1;
-        }
-      });
-    } else if ($last.is('.gamepadSelected')) {
-      $last.removeClass('gamepadSelected');
+    if (selectedIndex !== null) {
+      removeClass(links[selectedIndex], 'gamepadSelected');
+      newIndex = (selectedIndex + 1) % links.length
     }
-    jQuery(links[newIndex]).addClass('gamepadSelected');
+    addClass(links[newIndex], 'gamepadSelected');
   }
 
   function prevLink() {
-    var links = jQuery('a.internalLink, a.externalLink');
+    var links = getTwineLinks();
+    var selectedIndex = findSelectedIndex(links);
     var newIndex = 0;
-    var $first = jQuery(links[0]);
-    if (links.is('.gamepadSelected')) {
-      if ($first.is('.gamepadSelected')) {
-        $first.removeClass('gamepadSelected');
-        newIndex = links.length - 1;
-      } else {
-        links.each(function(_idx, el) {
-          var $el = jQuery(el);
-          if ($el.is('.gamepadSelected')) {
-            $el.removeClass('gamepadSelected');
-            newIndex = _idx - 1;
-          }
-        });
+    if (selectedIndex !== null) {
+      removeClass(links[selectedIndex], 'gamepadSelected');
+      newIndex = selectedIndex > 0 ? selectedIndex - 1 : links.length - 1;
+    }
+    addClass(links[newIndex], 'gamepadSelected');
+  }
+
+  function getTwineLinks() {
+    return document.querySelectorAll('a.internalLink, a.externalLink');
+  }
+
+  function findSelectedIndex(links) {
+    for (var i = 0; i < links.length; i++) {
+      if (hasClass(links[i], 'gamepadSelected')) {
+        return i;
       }
     }
-    jQuery(links[newIndex]).addClass('gamepadSelected');
+    return null;
+  }
+
+  // From youmightnotneedjquery.com
+  function hasClass(el, className) {
+    if (el.classList)
+      return el.classList.contains(className);
+    else
+      return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+  }
+
+  // From youmightnotneedjquery.com
+  function removeClass(el, className) {
+    if (el.classList)
+      el.classList.remove(className);
+    else
+      el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+  }
+
+  // From youmightnotneedjquery.com
+  function addClass(el, className) {
+    if (el.classList)
+      el.classList.add(className);
+    else
+      el.className += ' ' + className;
   }
 
 })(((typeof(module) !== 'undefined') && module.exports) || window);
