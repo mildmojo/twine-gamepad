@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>Twine-gamepad bookmarklet</title>
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+SC:900|Contrail+One' rel='stylesheet' type='text/css'>
+  <style type='text/css'>
+    body {
+      background: #111111;
+      color: #DDDDDD;
+      text-align: center;
+      font-family: Contrail One,Tahoma,Sans;
+      font-size: 40pt;
+      line-height: 1.5em;
+    }
+
+    h1 {
+      font-family: Alegreya SC,Cooper Black,Serif;
+      font-size: 60pt;
+    }
+
+    a {
+      color: #ff4136;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a.back {
+      font-size: 0.65em;
+      color: #555555;
+    }
+
+    a.back:hover{
+      color: #ff4136;
+    }
+
+    #outer {
+      width: 98%;
+      height: 80%;
+      background-color: #333333;
+
+      display: -webkit-box;
+      -webkit-box-align: center;
+      -webkit-box-pack: center;
+
+      display: -moz-box;
+      -moz-box-align: center;
+      -moz-box-pack: center;
+
+      display: -ms-flexbox;
+      -ms-flex-align: center;
+      -ms-flex-pack: center;
+
+      display: box;
+      box-align: center;
+      box-pack: center;
+    }
+  </style>
+</head>
+<body id="outer">
+  <div id="outer">
+    <div>
+      <h1>Book. Mark. Let.</h1>
+      <div id="bookmark">
+        Bookmark this: <a href='javascript:(function(){function injectJS(url){_my_script=document.createElement("script");_my_script.type="text/javascript";_my_script.src=url;document.getElementsByTagName("head")[0].appendChild(_my_script)}function injectCSS(url){_my_style=document.createElement("link");_my_style.type="text/css";_my_style.rel="stylesheet";_my_style.href=url;document.getElementsByTagName("head")[0].appendChild(_my_style)}injectJS("http://mildmojo.github.io/twine-gamepad/src/gamepad.min.js");injectJS("http://mildmojo.github.io/twine-gamepad/src/twine_gamepad.js");injectCSS("http://mildmojo.github.io/twine-gamepad/src/style.css");console.log("twine-gamepad injected")})();' title="Bookmark me!">Add Twine-Gamepad</a>
+      </div>
+      <a href="https://github.com/mildmojo/twine-gamepad" class="back">(Go Back)</a>
+    </div>
+  </div>
+</body>
+</html>
