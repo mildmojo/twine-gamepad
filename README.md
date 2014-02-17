@@ -39,17 +39,17 @@ a `stylesheet`-tagged passage in your main story file. If you do, you may need
 to use `!important` to override this extension's defaults. Here's an example:
 
 ```css
-/* Change the "selected link" style to underlining. */
-a.gamepadSelected {
-  border: none !important;
-  text-decoration: underline;
-}
-
 /* Default stylesheet adds 2px padding to keep nearby text from jittering when
  * a 2px border is added to selected links. Remove it.
  */
 a.internalLink, a.externalLink {
   padding: 0 !important;
+}
+
+/* Change the "selected link" style to underlining. */
+a.gamepadSelected {
+  border: none !important;
+  text-decoration: underline;
 }
 ```
 

@@ -1,10 +1,10 @@
+/* Keep surrounding text from jittering when 2px borders are added. */
+a.internalLink, a.externalLink {
+  padding: 2px;
+}
+
 /* Set the style for the currently-selected link. */
 a.gamepadSelected {
   border: 2px dotted blue;
   padding: 0px;
-}
-
-/* Keep surrounding text from jittering when 2px borders are added. */
-a.internalLink, a.externalLink {
-  padding: 2px;
 }
