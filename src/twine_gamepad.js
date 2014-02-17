@@ -94,6 +94,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   function nextLink() {
     var links = getTwineLinks();
+    if (links === null) return;
     var selectedIndex = findSelectedIndex(links);
     var newIndex = 0;
     if (selectedIndex !== null) {
@@ -101,10 +102,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       newIndex = (selectedIndex + 1) % links.length
     }
     addClass(links[newIndex], 'gamepadSelected');
+    showLink();
   }
 
   function prevLink() {
     var links = getTwineLinks();
+    if (links === null) return;
     var selectedIndex = findSelectedIndex(links);
     var newIndex = 0;
     if (selectedIndex !== null) {
@@ -112,6 +115,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       newIndex = selectedIndex > 0 ? selectedIndex - 1 : links.length - 1;
     }
     addClass(links[newIndex], 'gamepadSelected');
+    showLink();
+  }
+
+  function showLink() {
+    var selected = document.querySelector('.gamepadSelected');
+    if (selected && !isVisible(selected)) {
+      var position = isAboveViewport(selected)
+      selected.scrollIntoView(position);
+    }
   }
 
   function getTwineLinks() {
@@ -125,6 +137,21 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }
     }
     return null;
+  }
+
+  function isVisible(el) {
+    var offset = el.getBoundingClientRect();
+    if (offset.left < 0 || offset.top < 0){
+      return false;
+    }
+    if (offset.left > window.innerWidth || offset.top > window.innerHeight){
+      return false;
+    }
+    return true;
+  }
+
+  function isAboveViewport(el) {
+    return el.getBoundingClientRect().top < 0;
   }
 
   // From youmightnotneedjquery.com
