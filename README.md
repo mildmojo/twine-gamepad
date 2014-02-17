@@ -19,8 +19,14 @@ Originally developed for use in the Global Game Jam 2014 entry, "Get a Clue"
 
 ## Demo
 
-Try the gamepad-enabled [example story](http://mildmojo.github.io/twine-gamepad/example)
+Try the gamepad-enabled [example story](http://mildmojo.github.io/twine-gamepad/)
 (built from `example.tws` included here).
+
+Or try it directly in your own Twine story with zero modifications! Go
+[over here](http://mildmojo.github.io/twine-gamepad/bookmarklet.html), bookmark
+the bookmarklet link, open up your story in your browser, then click the
+bookmark to add twine-gamepad. Pick up a controller, press a button, and try it
+out. If that gives you no love, try the Troubleshooting section below.
 
 ## Usage
 
