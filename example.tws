@@ -34,7 +34,7 @@ p16
 (dp18
 S'text'
 p19
-VTwine-Gamepad Example\u000a\u000aYou may need to restart your browser after you connect a gamepad.\u000a\u000aYou may need to [[enable the Gamepad API]] in your browser.\u000a\u000aYou may need to press a face button on the controller before the browser will start reading gamepad events.\u000a\u000aUse the left stick or D-pad to navigate between links. Press any face button to visit a link.\u000a\u000a[[Here's a link.|That was easy]]\u000a[[Here's another.|That was easy]]\u000a[[Here's one more, for good measure.|That was easy]]
+VTwine-Gamepad Example\u000a\u000aYou may need to restart your browser after you connect a gamepad.\u000a\u000aYou may need to [[enable the Gamepad API]] in your browser.\u000a\u000aYou may need to press a face button on the controller before the browser will start reading gamepad events.\u000a\u000aUse the left stick or D-pad to navigate between links. Press any face button to visit a link.\u000a\u000a[[Here's a link.|That was easy]]\u000a[[Here's another.|That was easy]]\u000a[[Here's one more, for good measure.|That was easy]]\u000a\u000aAll done? Head back to [[twine-gamepad on GitHub|https://github.com/mildmojo/twine-gamepad]].
 p20
 sS'title'
 p21
@@ -48,9 +48,9 @@ p24
 ((I2014
 I2
 I16
-I20
+I21
 I18
-I7
+I16
 I6
 I47
 I0
