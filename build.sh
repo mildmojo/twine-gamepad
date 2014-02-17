@@ -15,5 +15,4 @@ echo ':: Style - selected link [stylesheet]' > twine_gamepad.twee
 cat "$CSS_FILE" >> twine_gamepad.twee
 echo >> twine_gamepad.twee
 echo ':: Script loader [script]' >> twine_gamepad.twee
-echo '// requires jQuery' >> twine_gamepad.twee
 cat "$MINIFIED_FILE" >> twine_gamepad.twee
